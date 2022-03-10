@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora JS</title>
+    <!--Poner dos input y 4 botones (+, -, *, /) Sacar el resultado de la operación en un h1-->
+    <link rel="stylesheet" href="style.css">
+    <script src="myscript.js"></script> 
+</head>
+<body id="cuerpo">
+    <h1>Calculadora en JavaScript</h1>
+    <div>
+        <form>
+            <label for="operando_1">Operando 1:</label>
+            <input type="number" name="operando_1" id="operando_1" placeholder="Introduce un número" tabindex="1"> <br/>
+            <label for="operando_2">Operando 2:</label>
+            <input type="number" name="operando_2" id="operando_2" placeholder="Introduce un número" tabindex="2">
+            <br/><br/>
+            <div id="acciones">
+                <input type="button" value="+" tabindex="3" id="button_suma">
+                <input type="button" value="-" tabindex="4" id="button_resta">
+                <input type="button" value="*" tabindex="5" id="button_multi">
+                <input type="button" value="/" tabindex="6" id="button_divide">
+            </div>
+        </form>
+    </div>
+    <div id="resultado">
+        <h1 id="text_resultado">¿?</h1>
+    </div>
+    <div id="resultado"></div>
+</body>
+</html>
