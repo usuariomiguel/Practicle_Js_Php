@@ -1,3 +1,8 @@
+#cuerpo {
+    background-color: azure;
+    font-size: large;
+    font-weight: bold;
+}
 table,td,th,tr {
     border: 1px solid black;
     border-collapse: collapse;
@@ -10,5 +15,3 @@ table {width: 50%;}
     margin-left: 30%;
     margin-right: 30%;
 }
-
-p {text-align: center;}

@@ -2,8 +2,8 @@
 try {
     $conexion_bd = new PDO(
                     'mysql:host=127.0.0.1;dbname=ciclismo',
-                    'root',
-                    'Clave_00'
+                    'miguel',
+                    'miguel'
                 );
     $conexion_bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);//https://www.php.net/manual/en/pdo.setattribute.php
 
