@@ -1,0 +1,39 @@
+#cuerpo {
+    background-color: azure;
+    font-size: large;
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+.error-details {
+    color: red;
+    font-weight: 400;
+}
+.background-error {
+    background-color: rgb(251, 216, 210);
+}
+
+#n_correcto {
+    color:rgb(50, 50, 50);
+    background-color: chartreuse;
+}
+#d_correcto {
+    color:rgb(50, 50, 50);
+    background-color: chartreuse;
+}
+#a_correcto {
+    color:rgb(50, 50, 50);
+    background-color: chartreuse;
+}
+#b_correcto {
+    color:rgb(50, 50, 50);
+    background-color: chartreuse;
+}
+
+#incorrecto {
+    color:rgb(50, 50, 50);
+    background-color: red;
+}
