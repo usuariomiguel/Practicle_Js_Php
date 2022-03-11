@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Alumno: Pablo González Troyano
+        Curso: 2º ASIR
+        Módulo: Implantación de aplicaciones web
+        Fecha: 04/03/2022
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Pablo González</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="title">
+        <h1>Calcular cuenta</h1>
+        <h3>¡Trate usted bien al personal!</h3>
+    </div>
+    <div id="formulario">
+        <form>
+        <label for="numero">Número: &nbsp;&nbsp;&nbsp;</label>
+        <input name="importe" id="importe" type="numero" tabindex="1" placeholder="Importe" required/>    
+        <br>
+        <input type="radio" id="valoracion_malo" name="valoracion" value="valoracion_malo">
+        <label for="valoracion_malo">Malo</label><br>
+        <input type="radio" id="valoracion_bueno" name="valoracion" value="valoracion_bueno">
+        <label for="css">Bueno</label><br>
+        <input type="radio" id="valoracion_excel" name="valoracion" value="valoracion_excel">
+        <label for="valoracion_excel">Excelente</label>
+        </form>
+    <br><hr><br>
+    <button id="BtnCalc" value="Calcular" class="botoncito">Calcular</button>
+    </div>
+    
+    <div id="resultado">
+        <h1>Total: <span id="importe_calculado">Cálculo aquí.</span> €</h1>
+    </div>
+</body>
+</html>

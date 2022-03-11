@@ -1,0 +1,25 @@
+div#title{
+    text-align: center;
+}
+
+#resultado {
+    width: 80%;
+    margin: 0 auto;
+}
+button {
+    height: 40px;
+    width: 40px;
+    margin: 3px;
+}
+
+.rojo {
+    background-color: red;
+    vertical-align: auto;
+    text-align: center;
+}
+
+.verde {
+    background-color: green;
+    vertical-align: auto;
+    text-align: center;
+}

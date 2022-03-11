@@ -1,0 +1,8 @@
+div#title{
+    text-align: center;
+}
+#formulario,#resultado {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
