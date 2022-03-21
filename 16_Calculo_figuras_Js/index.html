@@ -1,56 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Figuras</title>
     <script>
-    window.addEventListener("load",function() {
-    radio = document.getElementById("radio")
-    circunsferencia = document.getElementById("circunsferencia")
-    circulo = document.getElementById("circulo")
-    esfera = document.getElementById("esfera")
-    calcular = document.getElementById("calcular")
-    resultado = document.getElementById("resultado")
-    pi = Math.PI
-        
-        calcular.addEventListener("click",function() {
-            if (circunsferencia.checked == true || circulo.checked == true || esfera.checked == true) {
 
-                if (circunsferencia.checked == true) {
-                    let longitud = 2 * pi * radio;
-                    resultado.innerHTML = "longitud" + parseInt(longitud) ;                    
-                } else if (circulo == true) {
-                    let radio2 = radio * radio;
-                    let area = pi * radio2;
-                    resultado.innerHTML = "area" + parseInt(area) ;                    
-                } else if (esfera = true) {
-                    let radio3 = radio * radio * radio;
-                    let volumen = 4 / 3 * pi * radio3;
-                    resultado.innerHTML = "volumen" + parseInt(volumen) ;                    
-                } 
-            } else {
-                resultado.innerHTML = "Por favor selecciona un cálculo"
-            }
-        })           
-})   
+        window.addEventListener('load', function(){
+
+            radio = document.getElementById('radio');
+            circuns = document.getElementById('circuns');
+            circulo = document.getElementById('circulo');
+            esfera = document.getElementById('esfera');
+            calcular = document.getElementById('calcular');
+            
+            calcular.addEventListener('click',function () {
+
+                salida.innerHTML = "";
+
+                if ( circuns.checked ) {
+
+                    let longitud = 2 * Math.PI * parseInt(radio.value);
+                    salida.innerHTML = "Longitud Circunferencia: " + longitud;
+
+                }
+
+                if ( circulo.checked ) {
+                    
+                    let area = Math.PI * (parseFloat(radio.value) * parseFloat(radio.value));
+                    salida.innerHTML = "Area circulo: " + area;
+
+                }
+
+                if ( esfera.checked ) {
+
+                    let volumen = 4/3 + Math.PI * (parseFloat(radio.value) * parseFloat(radio.value) * parseFloat(radio.value));
+                    salida.innerHTML = "Volumen esfera: " + volumen;
+
+                }
+
+                if ( circuns.checked == false && circulo.checked == false && esfera.checked == false ) {
+
+                    salida.innerHTML = "Por favor selecciona un cálculo";
+
+                }
+            })
+
+        })
+
     </script>
-    <title>Ejercicio2</title>
+
 </head>
-<body id="cuerpo">
-    <h1>Calculadora circuferencia, circulo y esfera</h1>
-    <label>Valor radio: </label>
-    <input type="number" id="radio"><br><br>
-    <label>Circunsferencia: </label>
-    <input type="checkbox" id="circunsferencia" value=" "> </input>
-    <label>circulo: </label>
-    <input type="checkbox" id="circulo"></input>
-    <label>esfera: </label>
-    <input type="checkbox" id="esfera"></input><hr>
-    <button id="calcular">Calcular</button>
-    <div>
-        <h4 id="resultado">
-        </h4>
+
+<body>
+
+    <label>Radio: </label>
+    <input type="number" id="radio"><br>
+    
+    <input type="checkbox" id="circuns">
+    <label>Circunsferencia </label><br>
+    
+    <input type="checkbox" id="circulo">
+    <label>circulo </label><br>
+    
+    <input type="checkbox" id="esfera">
+    <label>Esfera </label><br>
+
+    <input type="button" value="calcular" id="calcular">
+    
+    <div id="salida">
+
     </div>
+
 </body>
+
+</html>
