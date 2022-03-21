@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+    window.addEventListener("load",function() {
+    frase = document.getElementById("frase")
+    veces = document.getElementById("veces")
+    salida = document.getElementById("salida")
+    añadir = document.getElementById("añadir")
+    random = 
+
+    añadir.addEventListener("click",function() {
+        let li = document.createElement("li");/*creamos nodo <li>*/
+        let numero = parseInt(veces);
+        let todo = `${frase.value}:${veces.value}`;
+        /*
+        for (i = 0; i < veces; i++) {
+            color = color + simbolos[Math.floor(Math.random() * 16)];
+            document.getElementById("hexadecimal").innerHTML = color;
+        */
+        li.innerHTML = todo;
+        salida.prepend(li);
+        //}
+    })           
+})   
+    </script>
+    <title>Ejercicio1</title>
+</head>
+<body id="cuerpo">
+    <h1>Frases de colores</h1>
+    <label>Frase: </label>
+    <input type="text" id="frase"></input>
+    <label>Veces: </label>
+    <input type="number" name="veces" id="veces"></input>
+    <button id="añadir">Añadir frase</button>
+    <div>
+        <ul id="salida">
+        </ul>
+    </div>
+</body>
