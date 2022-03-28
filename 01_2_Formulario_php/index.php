@@ -3,41 +3,66 @@ print_r($_POST);
 
 $nombre= "";
 $desc= "";
-$s_urgencia= "";
-$n_urgencia= "";
-$validar = "";
-$error = "";
-if (isset($_POST['nombre'])) {
-    $nombre = ($_POST['nombre']);
-    $validar = "id='correcto'";
+$error_nombre= false;
+$error_desc= false;
 
-}
-if (isset($_POST['desc'])) {
-    $desc = ($_POST['desc']);
-    $validar = "id='correcto'";
 
-}
-if (!isset($_POST['nombre'])) {
-    $nombre = ($_POST['nombre']);
-    $validar = "id='incorrecto'";
-    $error = "falta campo";
-}
-if (!isset($_POST['desc'])) {
-    $desc = ($_POST['desc']);
-    $validar = "id='incorrecto'";
-    $error = "falta campo";
-}
+if (
+    isset($_POST['enviar'])
+) {
 
-if (isset($_POST['s_urgencia'])) {
-    $s_urgencia = ($_POST['s_urgencia']);
-    $validar = "id='correcto'";
-    $error = "falta campo";
-}
-if (isset($_POST['n_urgencia'])) {
-    $n_urgencia = ($_POST['n_urgencia']);
-    $validar = "id='correcto'";
-    $error = "falta campo";
-}
+    if (
+
+        isset($_POST['nombre']) &&
+        $_POST['nombre'] != ""
+
+    ) {
+
+        //campo relleno
+        $nombre = $_POST['nombre']; 
+
+    } else {
+
+        //campo vacio
+        $error_nombre == true;
+
+    }
+
+    if (
+
+        isset($_POST['desc']) &&
+        $_POST['desc'] != ""
+
+    ) {
+
+        //campo relleno
+        $nombre = $_POST['desc']; 
+
+    } else {
+
+        //campo vacio
+        $error_desc == true;
+    }
+
+    if (
+
+        isset($_POST['desc']) &&
+        $_POST['desc'] != ""
+
+    ) {
+
+        //campo relleno
+        $nombre == $_POST['desc']; 
+
+    } else {
+
+        //campo vacio
+
+    }
+
+
+} 
+
 
 ?>
 <!DOCTYPE html>
@@ -52,17 +77,17 @@ if (isset($_POST['n_urgencia'])) {
 <body id="cuerpo">
     <hr>
     <h1>Validar datos</h1>
-    <form method="post" action="index.php">
+    <form method="post" action="/01_2_Formulario_php/index.php">
         <label>Nombre: </label>
-        <input type="text" name="nombre" value="<?=$nombre?>" <?=$validar?>></input><?=$error?>
+        <input id="<?php ($error_nombre)?'error':''?>" type="text" name="nombre" value="<?=$nombre?>" ></input>
         <label>Descripcion: </label>
-        <input type="text" name="desc" value="<?=$desc?>" <?=$validar?>></input><?=$error?><hr>
+        <input <?php ($error_desc)?'error':''?> type="text" name="desc" value="<?=$desc?>"></input><hr>
         <label>Urgente?</label><br><br>
         <label>Si: </label>
-        <input type="radio" name="s_urgencia" value="<?=$s_urgencia?>" <?=$validar?>></input><?=$error?>
+        <input type="radio" name="s_urgencia" value="s"></input>
         <label>No: </label>
-        <input type="radio" name="n_urgencia" value="<?=$n_urgencia?>" <?=$validar?>></input><?=$error?><hr>
-        <button name="enviar">Enviar</button>
+        <input type="radio" name="n_urgencia" value="n"></input><hr>
+        <input type="submit" name="enviar" value="enviar"></input>
     </form>
     <h1>
 
