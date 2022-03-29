@@ -1,10 +1,9 @@
 <?php
 
-print_r($_POST);
-
-
 $nombre= "";
 $desc= "";
+$vacio=false;
+$vacio2=false;
 $s=false;
 $n=false;
 $vacio3=false;
@@ -43,28 +42,28 @@ if (
 
     }
 
-    if ($_POST['s'] == 's' || $_POST['n'] == 'n' ) {
 
-        //campo s n no esta vacio
-        if ($_POST['s'] == 's') {
+    if ($_POST['s'] == 's') {
 
-            $s = true;
+        $s = true;
 
-        } else {
+    }
 
-            $n = true;
+    if ($_POST['n'] == 'n') {
 
-        }
+        $n = true;
 
-    } else {
+    }
 
-        //campo s y r vacio
-        $vacio3 =  true;
+    if (($n == false) && ($s == false)) {
+
+        $vacio3 = true;
 
     }
 
 
-    if (isset($nombre) && isset($desc) && ($vacio3 == false) ) {
+
+    if ($nombre == $_POST['nombre'] && $desc == $_POST['desc'] && ($s == true  || $n == true )  ) {
 
         $correcto = "<h3>un técnico le contactará</h3>";
 
@@ -74,8 +73,8 @@ if (
 
     //no pulso el boton de enviar
 
-}
 
+}
 
 ?>
 
@@ -85,6 +84,7 @@ if (
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Verificacion</title>
 
 </head>
