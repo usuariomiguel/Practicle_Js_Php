@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.addEventListener("load", function() {
+
+            let lanzar = document.getElementById("lanzar");
+            let salida = document.getElementById("salida");
+            let imagen_dado = document.getElementById("imagen_dado");
+            let min = 1;
+            let max = 6;
+
+                lanzar.addEventListener("click", function(){
+
+                    let num_rand = Math.floor(Math.random() * (max - min)) + min;
+
+                    if (num_rand == 1 ) {
+
+                        num_url = num_rand
+
+                    }else if(num_rand == 2 ){
+
+                        num_url = num_rand
+
+                    }else if(num_rand == 3){
+
+                        num_url = num_rand
+
+                    }else if(num_rand == 4 ){
+
+                        num_url = num_rand
+                        
+                    }else if(num_rand == 5){
+
+                        num_url = num_rand
+
+
+                    }else if(num_rand == 6 ){
+                        
+                        num_url = num_rand
+
+                    }
+
+                    imagen_dado.innerHTML = "<img width=100 heigth=100 src="+num_url+".png>";
+
+                })
+
+        })
+
+    </script>
+</head>
+<body>
+    <h1>Juego de dado<h1>
+
+        <input type="submit" value="lanzar" id="lanzar"><br>
+        <span id="salida">
+
+        </span>
+        <span id="imagen_dado">
+
+        </span>
+</body>
+</html>
