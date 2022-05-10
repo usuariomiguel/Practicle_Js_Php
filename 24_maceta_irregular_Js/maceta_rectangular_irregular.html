@@ -1,16 +1,3 @@
-/*
-Para una maceta rectangular irregular, es decir, que hace la figura de un “tronco de pirámide (rectangular)”, 
-que es como se le llama en matemáticas.
-
-Y para ello, la fórmula es algo más compleja (pero fácil si tienes a mano una calculadora). En concreto, sería:
-
-V = h/3 × (A1 + A2 + √(A1×A2))
-
-Te la explicamos. h se refiere a la altura de la jardinera. A1 sería el área (su largo por su ancho) 
-de la parte superior (por donde vas a colocar la planta) y A2 sería el área de la base 
-(donde tienes los agujeros de la jardinera). Y por último, la raíz cuadrada es del producto (la multiplicación de A1yA2).
-*/
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +5,7 @@ de la parte superior (por donde vas a colocar la planta) y A2 sería el área de
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>maceta</title>
+    <link rel="stylesheet" href="style.css">
     <script>
 
     window.addEventListener("load",function(){
@@ -44,25 +32,23 @@ de la parte superior (por donde vas a colocar la planta) y A2 sería el área de
 </head>
 <body>
     <form action="maceta_rectangular_irregular.html" method="post">
-        <h1>Caculo maceta</h1>
-        <label>altura: </label>
-        <input type="text" id="h" name="altura">
+        <b><h1 align="center">Cálculo maceta</h1></b>
+        <label>Altura: </label>
+        <input type="number" id="h" name="altura">
         <br><br>
 
         <h2>Parte Superior</h2>
-        <label>longitud: </label>
-        <input type="text" id="long1" name="longitud1">
+        <label>Longitud: </label>
+        <input type="number" id="long1" name="longitud1">
+        &emsp;&emsp;&emsp;&emsp;<label>Anchura: </label>
+        <input type="number" id="anch1" name="anchura">
         <br>
-        <label>anchura: </label>
-        <input type="text" id="anch1" name="anchura">
-        <br><br>
 
         <h2>Parte Inferior</h2>
-        <label>longitud: </label>
-        <input type="text" id="long2" name="longitud">
-        <br>
-        <label>anchura: </label>
-        <input type="text" id="anch2" name="anchura">
+        <label>Longitud: </label>
+        <input type="number" id="long2" name="longitud">
+        &emsp;&emsp;&emsp;&emsp;<label>Anchura: </label>
+        <input type="number" id="anch2" name="anchura">
         <br><br>
 
         <input type="button" id="calcular" value="calcular">
