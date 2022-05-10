@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+
+        window.addEventListener("load", function() {
+
+            let dados_atacante = document.getElementById("dados_atacante")
+            let dados_defensor = document.getElementById("dados_defensor")
+            let lanzar_dados = document.getElementById("lanzar_dados")
+            let salida = document.getElementById("salida")
+            let salida2 = document.getElementById("salida2")
+            const clean = document.getElementById("clear")
+            let min = 1
+            let max = 6
+
+            lanzar_dados.addEventListener("click", function(){
+                let sum = 0
+                let sum2 = 0
+                    //suma de los dados
+                    for ( var i = 0; i < dados_atacante.value; i++) {
+                        let num_rand = Math.floor(Math.random() * (max - min)) + min
+                        sum += num_rand
+                        //salida.innerHTML = sum
+                        //console.log(num_rand)  
+                    }
+                    for ( var i = 0; i < dados_defensor.value; i++) {
+                        let num_rand2 = Math.floor(Math.random() * (max - min)) + min
+                        sum2 += num_rand2
+                        //salida2.innerHTML = sum2
+                        //console.log(num_rand2);
+                    }
+                    //resultado del juego
+                    if ( sum > sum2 ){
+                        salida2.innerHTML = "<h4>CONQUISTADO</h4>"
+                    } else if ( sum2 > sum ){
+                        salida2.innerHTML = "<h4>DEFENDIDO</h4>"
+                    } else {
+                        salida2.innerHTML = "<h4>EMPATE</h4>"
+                    }
+                    salida.innerHTML = "<br>Atacante:"+sum+"<br> Defensor: "+sum2+"<br>"
+
+                })
+
+                clear.addEventListener("click", function(){
+
+                    salida.innerHTML = clear.value;
+                    salida2.innerHTML = clear.value;
+
+                })
+
+        })
+
+    </script>
+</head>
+<body>
+    <h1>Juego de dados</h1>
+        <label>Nº dados atacante </label><br>
+        <input type="number" id="dados_atacante"><br>
+
+        <label>Nº dados defensor </label><br>
+        <input type="number" id="dados_defensor"><br><br>
+
+        <input type="submit" value="lanzar" id="lanzar_dados">
+
+        <button id="clear" value=" ">clear</button><br><br><hr>
+        
+        <span id="salida2"></span>
+        <span id="salida"></span>
+</body>
+</html>

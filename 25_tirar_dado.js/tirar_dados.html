@@ -14,19 +14,26 @@
             let n_dados = document.getElementById("n_dados")
             let salida = document.getElementById("salida")
             let imagen_dado = document.getElementById("imagen_dado")
-            let espacio = document.getElementById("espacio")
+            const clean = document.getElementById("clear")
             let min = 1
             let max = 6
 
                 lanzar.addEventListener("click", function(){
 
                     for ( var i = 0; i < n_dados.value; i++) {
+                        
                         let p = document.createElement("p")
                         let num_rand = Math.floor(Math.random() * (max - min)) + min
                         p.innerHTML = "<img height=100 width=100 src="+num_rand+".png>"
                         imagen_dado.prepend(p)
-                        //console.log(num_rand)                        
+                        //console.log(num_rand)
+
                     }
+
+                })
+                clear.addEventListener("click", function(){
+
+                    imagen_dado.innerHTML = clear.value;
 
                 })
 
@@ -36,14 +43,10 @@
 </head>
 <body>
     <h1>Juego de dados</h1>
-        <label>Numero de dados</label>
+        <label>Numero de dados:</label>
         <input type="number" id="n_dados">
-        <input type="submit" value="lanzar" id="lanzar"><br>
-        <span id="imagen_dado">
-
-        </span>
-        <span id="espacio">
-
-        </span>
+        <input type="submit" value="lanzar" id="lanzar">
+        <button id="clear" value=" ">borrar</button><br><br><hr>
+        <span id="imagen_dado"></span>
 </body>
 </html>
