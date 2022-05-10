@@ -1,4 +1,4 @@
-# Repositorio con practicas basicas de JavaScript y php
+# Repositorio con prácticas de JavaScript y php
 
 ## Contenidos
 
@@ -17,4 +17,4 @@ link: https://usuariomiguel.github.io/Practicle_Js_Php/
 - [22_list_colors_Js](./22_list_colors_Js/)
 - [24_maceta_irregular_Js](./24_maceta_irregular_Js/)
 - [25_tirar_dado.js](./25_tirar_dado.js/)
-- [26_Simuacion_Risk_Js.js](./26_Simuacion_Risk_Js/)
+- [26_Simuacion_Risk_Js](./26_Simuacion_JuegoRisk_Js/)
