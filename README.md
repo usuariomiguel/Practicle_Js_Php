@@ -14,3 +14,7 @@ link: https://usuariomiguel.github.io/Practicle_Js_Php/
 - [16_Calculo_figuras_Js](./16_Calculo_figuras_Js/)
 - [18_Buscaminas_Js](./18_Buscaminas_Js/)
 - [19_Calculo_Propina_Js](./19_Calculo_Propina_Js/)
+- [22_list_colors_Js](./22_list_colors_Js/)
+- [24_maceta_irregular_Js](./24_maceta_irregular_Js/)
+- [25_tirar_dado.js](./25_tirar_dado.js/)
+- [26_Simuacion_Risk_Js.js](./26_Simuacion_Risk_Js.js/)
