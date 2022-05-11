@@ -2,4 +2,8 @@ body {
     background-color: azure;
     font-size: x-large;
     font-weight: bold;
+    text-align: center;
+}
+h1 {
+    color: darkgoldenrod;
 }
