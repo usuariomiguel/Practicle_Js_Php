@@ -21,8 +21,8 @@
                 lanzar.addEventListener("click", function(){
 
                     for ( var i = 0; i < n_dados.value; i++) {
-                        
-                        let p = document.createElement("p")
+
+                        let p = document.createElement("span")
                         let num_rand = Math.floor(Math.random() * (max - min)) + min
                         p.innerHTML = "<img height=100 width=100 src=src/"+num_rand+".png>"
                         imagen_dado.prepend(p)
