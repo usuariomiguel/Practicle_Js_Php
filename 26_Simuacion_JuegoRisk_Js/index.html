@@ -17,14 +17,21 @@
             let salida2 = document.getElementById("salida2")
             let salida_dados = document.getElementById("salida_dados")
             let salida_dados2 = document.getElementById("salida_dados2")
+            let titulo = document.getElementById("titulo")
+            let titulo2 = document.getElementById("titulo2")
             const clean = document.getElementById("clear")
             let min = 1
             let max = 6
 
             lanzar_dados.addEventListener("click", function(){
+                salida.innerHTML = " "
+                salida2.innerHTML = " "
+                salida_dados.innerHTML = " "
+                salida_dados2.innerHTML = " "
                 let sum = 0
                 let sum2 = 0
                     //suma de los dados
+                    titulo.innerHTML = "<br>Atacante         Defensor"
                     for ( var i = 0; i < dados_atacante.value; i++) {
                         let num_rand = Math.floor(Math.random() * (max - min)) + min
                         sum += num_rand
@@ -37,7 +44,7 @@
                         let num_rand2 = Math.floor(Math.random() * (max - min)) + min
                         sum2 += num_rand2
                         let span = document.createElement("span")
-                        span.innerHTML = "<img height=100 width=100 src=src/"+num_rand+".png>"
+                        span.innerHTML = "<img height=100 width=100 src=src/"+num_rand2+".png>"
                         salida_dados2.prepend(span)
                         //console.log(num_rand2);
                     }
@@ -49,7 +56,7 @@
                     } else {
                         salida2.innerHTML = "<h4>EMPATE</h4>"
                     }
-                    salida.innerHTML = "<br>Atacante:"+sum+"<br> Defensor: "+sum2+"<br>"
+                    salida.innerHTML = "Atacante:"+sum+"<br> Defensor: "+sum2+"<br>"
 
                 })
 
@@ -78,6 +85,8 @@
         
         <span id="salida2"></span>
         <span id="salida"></span>
+        <div id="titulo"></div>
+        <div id="titulo2"></div>
         <span id="salida_dados"></span>
         <span id="salida_dados2"></span>
 </body>
