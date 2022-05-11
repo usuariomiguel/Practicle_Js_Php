@@ -8,3 +8,9 @@ body {
 h1,h4 {
     color: greenyellow;
 }
+.salida_dados {
+    text-align: left;
+}
+.salida_dados2 {
+    text-align: left;
+}
