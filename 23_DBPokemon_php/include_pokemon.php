@@ -1,7 +1,5 @@
 <?php 
-
 include ("./acceso_datos.php");
-
 $pokemon = $conexion_bd->query('SELECT p.pok_id,p.pok_name,b.b_hp,b.b_atk,b.b_def FROM base_stats b, pokemon p where p.pok_id=b.pok_id;');
 ?>
 
@@ -30,7 +28,7 @@ $pokemon = $conexion_bd->query('SELECT p.pok_id,p.pok_name,b.b_hp,b.b_atk,b.b_de
                 <?php foreach($pokemon as $fila) { ?>
                     <tr>
                         <td>
-                            <a href="detalle-pokemon.php?pok_id=<?=$fila['pok_id']?>">
+                            <a href="detalle-pokemon.php?id=<?=$fila['pok_id']?>">
                                 <?=$fila['pok_name']?>
                             </a>
                         </td>

@@ -1,12 +1,11 @@
 <?php 
 
 include ("./acceso_datos.php");
-$select = " ";
-$pok = $conexion_bd->query('SELECT p.pok_id,p.pok_name,b.b_hp,b.b_atk,b.b_def FROM base_stats b, pokemon p where p.pok_id=b.pok_id;');
-$id = $select->fetch($select->execute(array(':pok_id' => $_GET['pok_id'])));
-
-print_r ($_GET['pok_id']);
-print_r ($select);
+$select = $conexion_bd->prepare('SELECT p.pok_id, p.pok_name, b.b_hp, b.b_atk, b.b_def FROM base_stats b, pokemon p where p.pok_id = b.pok_id and p.pok_id = :id;');
+$select->execute(array(':id' => $_GET['id']));
+$id = $select->fetchAll(PDO::FETCH_ASSOC);
+#print_r ($_GET['id']);
+#print_r ($id);
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +30,7 @@ print_r ($select);
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($pokemon as $fila) { ?>
+                <?php foreach($id as $fila) { ?>
                     <tr>
                         <td><?=$fila['pok_name']?></td>
                         <td><?=$fila['b_hp']?></td>
