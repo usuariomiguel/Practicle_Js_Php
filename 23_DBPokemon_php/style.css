@@ -1,0 +1,39 @@
+body {
+    background-color: rgb(194, 210, 235);
+}
+
+table {
+    padding-left: 5px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border: 3px solid rgb(28, 90, 109);
+ }
+ th, td {
+    width: 10%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid rgb(103, 32, 112);
+    padding: 0.2em;
+ }
+ th {
+    background: rgb(202, 159, 159);
+ }
+
+#tabla_listado {
+
+    text-align: center;
+
+}
+#menu_principal {
+
+    background-color: burlywood;
+    text-align: center;
+
+}
+
+#div_titulo {
+
+    background-color: yellowgreen;
+
+}
