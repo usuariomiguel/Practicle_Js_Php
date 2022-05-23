@@ -21,46 +21,59 @@
             let mask16 = document.getElementById("mask16")
             let mask24 = document.getElementById("mask24")
             let decidir = document.getElementById("decidir")
-            let salida = document.getElementById("salida")
-            let salida2 = document.getElementById("salida2")
+            let mascara = document.getElementById("mascara")
+            let respuesta = document.getElementById("respuesta")
+            let ip1 = document.getElementById("ip1")
+            let ip2 = document.getElementById("ip2")
             const limpiar = document.getElementById("limpiar")
 
                 decidir.addEventListener("click", function(){
                     function salidaip1() {
-                        salida.innerHTML = "Está en la misma red" + "<br>" 
-                        salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                        respuesta.innerHTML = "Está en la misma red" + "<br>" 
+                        ip1.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value 
+                        ip2.innerHTML = ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+
                     }
                     function salidaip2() {
-                        salida.innerHTML = "Están en distinta red" + "<br>" 
-                        salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                        mascara.innerHTML = mascara.value
+                        respuesta.innerHTML = "Están en distinta red" + "<br>" 
+                        ip1.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value 
+                        ip2.innerHTML = ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value    
                     }
                     if( mask8.checked ) {
                         if ( ip1a.value == ip2a.value ) {
+                            mascara.innerHTML = mask8.value
                             salidaip1()
                         } else {
+                            mascara.innerHTML = mask8.value
                             salidaip2()
                         }
                     } 
                     else if( mask16.checked ) {
                         if ( ip1a.value == ip2a.value && ip1b.value == ip2b.value ) {
+                            mascara.innerHTML = mask16.value
                             salidaip1()
                         } else {
+                            mascara.innerHTML = mask16.value
                             salidaip2()
                         }
                     } 
                     else if( mask24.checked ) {
                         if ( ip1a.value == ip2a.value && ip1b.value == ip2b.value && ip1c.value == ip2c.value ) {
+                            mascara.innerHTML = mask24.value
                             salidaip1()
-
                         } else {
+                            mascara.innerHTML = mask24.value
                             salidaip2()
                         }
                     } 
                 })
 
                 limpiar.addEventListener("click", function(){
-                    salida.innerHTML = limpiar.value;
-                    salida2.innerHTML = limpiar.value;
+                    ip1.innerHTML = limpiar.value;
+                    ip2.innerHTML = limpiar.value;
+                    mascara.innerHTML = limpiar.value;
+                    respuesta.innerHTML = limpiar.value;
                 })
         })
     </script>
@@ -89,16 +102,24 @@
             <thead>
                 <tr>
                     <th>
-                        Resultado
+                        Ip 1
                     </th>
                     <th>
-                        Ip 
+                        Ip 2
+                    </th>
+                    <th>
+                        Máscara
+                    </th>
+                    <th>
+                        Resultado
                     </th>
                 </tr>
             </thead>
             <tr>
-                <td id="salida"></td>
-                <td id="salida2"></td>
+                <td id="ip1"></td>
+                <td id="ip2"></td>
+                <td id="mascara"></td>
+                <td id="respuesta"></td>
             </tr>
         </table>
 </body>
