@@ -22,61 +22,84 @@
             let mask24 = document.getElementById("mask24")
             let decidir = document.getElementById("decidir")
             let salida = document.getElementById("salida")
+            let salida2 = document.getElementById("salida2")
             const limpiar = document.getElementById("limpiar")
 
                 decidir.addEventListener("click", function(){
-
+                    function salidaip1() {
+                        salida.innerHTML = "Está en la misma red" + "<br>" 
+                        salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                    }
+                    function salidaip2() {
+                        salida.innerHTML = "Están en distinta red" + "<br>" 
+                        salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                    }
                     if( mask8.checked ) {
                         if ( ip1a.value == ip2a.value ) {
-                            salida.innerHTML = "Está en distinta red" + "<br>" 
-                            salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                            salidaip1()
                         } else {
-                            salida.innerHTML = "No está en distinta red" + "<br>" 
-                            salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                            salidaip2()
                         }
                     } 
-                    if( mask16.checked ) {
+                    else if( mask16.checked ) {
                         if ( ip1a.value == ip2a.value && ip1b.value == ip2b.value ) {
-                            salida.innerHTML = "Está en distinta red" + "<br>" 
-                            salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                            salidaip1()
                         } else {
-                            salida.innerHTML = "No está en distinta red" + "<br>"                             
-                            salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                            salidaip2()
                         }
                     } 
-                    if( mask24.checked ) {
+                    else if( mask24.checked ) {
                         if ( ip1a.value == ip2a.value && ip1b.value == ip2b.value && ip1c.value == ip2c.value ) {
-                            salida.innerHTML = "Está en distinta red" + "<br>" 
-                            salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                            salidaip1()
+
                         } else {
-                            salida.innerHTML = "No está en distinta red" + "<br>"
-                            salida2.innerHTML = ip1a.value + "." + ip1b.value + "." + ip1c.value + "." + ip1d.value + "-" + ip2a.value + "." + ip2b.value + "." + ip2c.value + "." + ip2d.value
+                            salidaip2()
                         }
                     } 
-
                 })
+
                 limpiar.addEventListener("click", function(){
                     salida.innerHTML = limpiar.value;
+                    salida2.innerHTML = limpiar.value;
                 })
-
         })
     </script>
 </head>
+
 <body>
-    <h3>Rellenar Ip</h3>
+    <h1>¿Estan en la misma red?</h1>
     <label>Ip1: </label>
-    <input type="number" id="ip1a" max="255" min="0">.<input type="number" id="ip1b" max="255" min="0" >.<input type="number" id="ip1c" max="255" min="0" >.<input type="number" id="ip1d" max="255" min="0" ><br>
+    <input type="number" id="ip1a" max="255" min="0">.
+    <input type="number" id="ip1b" max="255" min="0" >.
+    <input type="number" id="ip1c" max="255" min="0" >.
+    <input type="number" id="ip1d" max="255" min="0" ><br>
     <label>Ip2: </label>
-    <input type="number" id="ip2a" max="255" min="0">.<input type="number" id="ip2b" max="255" min="0" >.<input type="number" id="ip2c" max="255" min="0" >.<input type="number" id="ip2d" max="255" min="0" ><br><br>
-    <label>Mascara</label>
+    <input type="number" id="ip2a" max="255" min="0">.
+    <input type="number" id="ip2b" max="255" min="0" >.
+    <input type="number" id="ip2c" max="255" min="0" >.
+    <input type="number" id="ip2d" max="255" min="0" ><br><br>
+    <label>Mascara:</label>
     8<input type="radio" id="mask8" value="8" name="Mascara">
     16<input type="radio" id="mask16" value="16" name="Mascara">
     24<input type="radio" id="mask24" value="24" name="Mascara"><br>
     <input type="submit" value="Decidir" id="decidir">
-    <button id="limpiar" value=" ">borrar</button><br>
-    <div>
-        <h3 id="salida"></h3>
-        <h5 id="salida2"></h5>
-    </div>
+    <button id="limpiar" value=" ">borrar</button><br><hr>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Resultado
+                    </th>
+                    <th>
+                        Ip 
+                    </th>
+                </tr>
+            </thead>
+            <tr>
+                <td id="salida"></td>
+                <td id="salida2"></td>
+            </tr>
+        </table>
 </body>
 </html>

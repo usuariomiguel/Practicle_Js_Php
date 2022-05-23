@@ -1,7 +1,22 @@
 body {
-    background-color: azure;
-    font-weight: bold;
+    text-align: center;
 }
 h1 {
-    color: darkgoldenrod;
+    color: rgb(75, 158, 212);
 }
+table {
+    padding-left: 5px;
+    width: 40%;
+    margin: 0 auto;
+    text-align: right;
+ }
+ th, td {
+    width: 10%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid rgb(103, 32, 112);
+    padding: 0.2em;
+ }
+ th {
+    background: rgb(202, 159, 159);
+ }
