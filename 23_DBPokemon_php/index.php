@@ -1,4 +1,6 @@
 <?php
+/*
+#Granos de arroz con base de datos
 
 include("./acceso_session.php");
 $ngranos = 0;
@@ -18,6 +20,16 @@ $ngranos = $ses->nsessiones;
 
 setcookie('leyenda_ajedrez',$ngranos);
 
+#Granos de arroz sin base de datos
+
+if (!isset($_COOKIE['cookie'])) {
+    $valor = 1;
+} else {
+    $valor = $_COOKIE['cookie'];
+    $valor = $valor * 2;
+}
+setcookie('cookie',$valor);
+*/
 ?>
 
 <!DOCTYPE html>
@@ -32,21 +44,15 @@ setcookie('leyenda_ajedrez',$ngranos);
 <body id="menu_principal">
     <div id="div_titulo">
         <h1>Listado de Pokemons</h1>
-            <button onclick="document.location='./include_pokemon.php'">Pokemon</button>
-            <button onclick="document.location='./include_abilities.php'">Abilities</button>
-            <button onclick="document.location='./include_moves.php'">Moves</button>
-            <button onclick="document.location='./include_base_stats.php'">Base stats</button>
     </div>
 
-        <p>
-            <?php 
-                echo "$ngranos grano de arroz";
-            ?>
-        </p>
+    <hr><br>
+    <button onclick="document.location='./include_abilities.php'">Abilities</button>
+    <button onclick="document.location='./include_moves.php'">Moves</button>
+    <button onclick="document.location='./include_base_stats.php'">Base stats</button>
+    <button onclick="document.location='./include_pokemon.php'">Pokemon</button><br><br>
+    <img src=".\src\portada_pokemon.png" width="500" height="250" onclick="document.location='./index.php'"></img>
 
-
-    <hr><br><br>
-    <img src=".\src\portada_pokemon.png" width="500" height="250" onclick="document.location='./include_pokemon.php'"></img>
 
 </body>
 </html>
