@@ -90,7 +90,7 @@ if (
 </head>
 <body>
 
-<form method="post" action="/Examen_ejers/3_verify_information/index.php">
+<form method="post">
 
     <label>Nombre:</label>
     <input style="background-color: <?php if ($vacio == true ) {echo 'red';} else { } ?>;" type="text" name="nombre" value="<?=$nombre?>" >

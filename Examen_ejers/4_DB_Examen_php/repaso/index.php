@@ -1,49 +1,33 @@
 <?php
+print_r($_GET);
+echo $_GET['buscar'];
+include("./acceso_datos.php");
 
-//print_r($_GET);
-$texto ="";
-$bienvenido = "";
-$row="";
-
-if (!isset($_GET['enviar'])) {
-
-    //no enviamos nada
-    $bienvenido = '<h1>Bienvenido a Google2</h1>';
-
+if (!isset($_GET['enviar'])){
+    $bienbenida = "Bienvenido a Google2";
 } else {
-    $texto = $_GET['texto'];
-    include('acceso_datos.php');
-    //si enviamos
-
-    $select = $conexion_bd->prepare("SELECT * FROM Respuesta WHERE contenido LIKE :parametro_consulta");
-    $select->execute(array(':parametro_consulta' => "%" .$texto. "%"));
-
+    $select = $conexion_bd->prepare("SELECT * FROM Respuesta WHERE contenido LIKE :conten");
+    $select->execute(array(':conten' => "%".$_GET['buscar']."%"));
     $row = $select->fetchAll(PDO::FETCH_ASSOC);
-
-    //print_r($row);
-
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google2</title>
+    <title>google2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <hr>
-    <h1> Google2 </h1>
-    <hr>
-    <form method="get" action="./index.php">
-        <b>Buscar:</b> <input type="text" name="texto" value="<?=$texto?>">
-        <input type="submit" name="enviar" value="enviar">
-    </form><br><br>
-    <?=$bienvenido?>
+    <h1>Google2</h1><hr>
+    <form method="get">
+        <label>Buscar:</label>
+        <input type="text" name="buscar">
+        <input type="submit" value="enviar" name="enviar"><br><br>
+        <?php if (!isset($_GET['enviar'])){ echo "Bienvenido a Google2";} ?>
+    </form>
     <table class="content">
         <thead>
             <tr>
@@ -56,7 +40,7 @@ if (!isset($_GET['enviar'])) {
             </tr>
         </thead>
 
-        <?php foreach($row as $r){?>
+        <?php if (isset($_GET['enviar'])){ foreach($row as $r){?>
 
         <tbody>
             <tr>
@@ -69,7 +53,8 @@ if (!isset($_GET['enviar'])) {
             </tr>
         </tbody>
 
-        <?php } ?>
+        <?php } } ?>
     </table>
+
 </body>
 </html>

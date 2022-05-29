@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo figuras</title>
+    <script>
+        window.addEventListener('load', function () {  
+            radio = document.getElementById('radio')
+            circuns = document.getElementById('circuns')
+            circulo = document.getElementById('circulo')
+            esfera = document.getElementById('esfera')
+            calcular = document.getElementById('calcular')
+            salida = document.getElementById('salida')
+            pi = Math.PI
+            calcular.addEventListener('click', function () { 
+                salida.innerHTML = ""
+                    if (circuns.checked){
+                        let resultado = 2 * Math.PI * radio.value
+                        salida.innerHTML = salida.innerHTML + "<br>" + "Longitud Circunsferencia: " + resultado
+                    }if(circulo.checked){
+                        let resultado2 = Math.PI * (radio.value * radio.value)
+                        salida.innerHTML = salida.innerHTML + "<br>" + "Area Circulo: " + resultado2
+                    }if(esfera.checked){
+                        let resultado3 = 4/3 * Math.PI * (radio.value * radio.value * radio.value)
+                        salida.innerHTML = salida.innerHTML + "<br>" + "Volumen Esfera: " + resultado3 + "<br>"
+                    } else {
+                        salida.innerHTML = "Por favor selecciona un cálculo"
+                    }
+            })
+        })
+    </script>
+</head>
+<body>
+    <label>Radio: </label>
+    <input type="number" id="radio"><br>
+    
+    <input type="checkbox" id="circuns">
+    <label>Circunsferencia </label><br>
+    
+    <input type="checkbox" id="circulo">
+    <label>circulo </label><br>
+    
+    <input type="checkbox" id="esfera">
+    <label>Esfera </label><br>
+
+    <input type="button" value="calcular" id="calcular">
+    
+    <div id="salida">
+
+    </div>
+</body>
+</html>
