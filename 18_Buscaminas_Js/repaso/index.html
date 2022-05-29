@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buscaminas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: aquamarine; text-align: center;">
+    <h1 id="titulo">Mi buscaminas</h1>
+    <label>Veces: </label>
+    <input type="number" id="numero">
+    <input type="button" value="start" id="start"><hr>
+    <div id="creacion"></div>
+    
+</body>
+<script>
+    window.addEventListener("load", function () {  
+        titulo = document.getElementById("titulo").style = "background-color: black; color: white; font-weight: bold;";
+        numero = document.getElementById("numero")
+        start = document.getElementById("start")
+        creacion = document.getElementById("creacion")
+        start.addEventListener("click", function () {  
+            creacion.innerHTML = " "
+            for (a=0;a<numero.value;a++){
+                for (e=0;e<numero.value;e++){
+                    let aleatorio = Math.floor(Math.random() * 6);
+                    if (aleatorio == 0){
+                        let casilla = document.createElement("button")
+                        casilla.innerHTML = "+";
+                        casilla.style = "color: white; background-color: red; font-size: xx-large;";
+                        creacion.prepend(casilla)
+                        console.log(aleatorio);
+                    } else if (aleatorio > 0 && aleatorio < 6){
+                        let casilla = document.createElement("button")
+                        casilla.innerHTML = "+";
+                        casilla.style = "color: white; background-color: green; font-size: xx-large;";
+                        creacion.prepend(casilla);
+                        console.log(aleatorio);
+                    }
+                }
+                let br = document.createElement("br");
+                creacion.prepend(br)
+            }
+        })
+    })
+</script>
+</html>
