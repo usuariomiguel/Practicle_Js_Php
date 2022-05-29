@@ -12,7 +12,7 @@ link: https://usuariomiguel.github.io/Practicle_Js_Php/
 - [11_Marcador_Telefono_Js](./11_Marcador_Telefono_Js/)
 - [12_Descubrir_Binario_Js](./12_Descubrir_Binario_Js/)
 - [16_Calculo_figuras_Js](./16_Calculo_figuras_Js/)
-- [18_Buscaminas_Js](./18_Buscaminas_Js/)
+- [18_Buscaminas_Js](./18_Buscaminas_Js/forma1/)
 - [19_Calculo_Propina_Js](./19_Calculo_Propina_Js/)
 - [22_list_colors_Js](./22_list_colors_Js/)
 - [24_maceta_irregular_Js](./24_maceta_irregular_Js/)
