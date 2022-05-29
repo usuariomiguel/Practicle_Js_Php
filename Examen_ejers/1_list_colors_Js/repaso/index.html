@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List color</title>
+    <script>
+        window.addEventListener("load", function() {
+            frase = document.getElementById('frase')
+            veces = document.getElementById('veces')
+            añadir = document.getElementById('añadir')
+            salida = document.getElementById('salida')
+            
+            añadir.addEventListener("click", function () {
+                for (a=0;a<veces.value;a++){
+                    li = document.createElement('li')
+                    randbgcolor = Math.floor(Math.random()*16777215).toString(16);
+                    randcolor = Math.floor(Math.random()*16777215).toString(16);
+                    li.style = 'background-color:' + "#" + randbgcolor + ';' + 'color:' + '#' + randcolor; 
+                    li.innerHTML = frase.value;
+                    salida.append(li);
+                    salida.append(li);
+                }
+              })
+        })
+    </script>
+</head>
+<body>
+    <label>Frase: </label>
+    <input type="text" id="frase">
+    <label>Veces: </label>
+    <input type="number" id="veces">
+    <input type="button" value="añadir frase" id="añadir">
+    <ul id="salida">
+    </ul>
+</body>
+</html>
