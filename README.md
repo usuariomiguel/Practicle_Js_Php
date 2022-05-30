@@ -19,3 +19,5 @@ link: https://usuariomiguel.github.io/Practicle_Js_Php/
 - [25_tirar_dado.js](./25_tirar_dado.js/)
 - [26_Simuacion_Risk_Js](./26_Simuacion_JuegoRisk_Js/)
 - [27_direcciones-Ips_Js](./27_direcciones-Ips_Js/)
+- [ChampionsMadrid](./Examen2/1/)
+- [CalculaCalorias](./Examen2/2/)
