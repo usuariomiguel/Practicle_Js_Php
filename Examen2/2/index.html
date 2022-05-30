@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorias del dia</title>
+    <script>
+        window.addEventListener("load", function () {
+            comida = document.getElementById('comida')
+            cuantos = document.getElementById('cuantos')
+            calorias = document.getElementById('calorias')
+            enviar = document.getElementById('enviar')
+            salida = document.getElementById('salida')
+            enviar.addEventListener("click", function () {
+                let kilocalorias = calorias.value * cuantos.value
+                li = document.createElement('li');
+                li.innerHTML = comida.value + ": " + kilocalorias + " " + "Kilocalorías";
+                salida.prepend(li);
+                //console.log(kilocalorias);
+            })
+        })
+    </script>
+</head>
+<body>
+    <label>Que vas a tomar/comer</label>
+    <input type="text" id="comida"></input>
+    <label>cuanto</label>
+    <input type="number" id="cuantos"></input>
+    <label>Kilocalorias</label>
+    <input type="number" id="calorias"></input><br>
+    <input type="button" value="enviar" id="enviar"><hr>
+    <ul id="salida">
+    </ul>
+</body>
+</html>

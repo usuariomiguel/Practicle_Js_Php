@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+
+table {
+    padding-left: 5px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border: 3px solid rgb(28, 90, 109);
+ }
+ th, td {
+    width: 10%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0.2em;
+ }
+ th {
+    background: rgb(174, 235, 178);
+ }
+
+#tabla_listado {
+
+    text-align: center;
+
+}
+#menu_principal {
+
+    text-align: center;
+
+}

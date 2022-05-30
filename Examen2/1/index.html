@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champions</title>
+    <script>
+        window.addEventListener("load", function () {
+            let evio
+            let contador = 0         
+            contar = document.getElementById('contar')
+            añadir = document.getElementById('añadir')
+            champions = document.getElementById('champions')
+            añadir.addEventListener("click", function () {
+
+                if (contador < 14 ) {
+                    contador = contador + 1;
+                    contar.innerHTML = (contador);
+                    img = document.createElement('img');
+                    img.setAttribute('src','./champions.png');
+                    img.setAttribute('height',100);
+                    champions.prepend(img);
+                }
+            })
+        })
+    //<img src="./champions.png" id="champions" height="100"></img>
+
+    </script>
+</head>
+<body>
+    <h1>Contador Champions</h1>
+    <img src="./Real-Madrid-icon.png" height="100" width="100"></img>
+    <h1 id="contar">0</h1>
+    <input type="button" value="+" id="añadir"><hr>
+    <div id="champions">
+    </div>
+</body>
+</html>
